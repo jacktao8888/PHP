@@ -15,6 +15,19 @@
   }
   
   <p class="cls1">aaaaa</p>
+#id选择器
+HTML中标签的id唯一，不能重复
+如：
+  <style>
+    #id1 {
+      background-color:blue;
+      color:red;
+    }
+  </style>
+  
+  <body>
+    <p id="id1">ssssssssssss</p>  
+  </body>
 
 #关联样式选择器
 必须按关联关系使用，不能有反顺序
