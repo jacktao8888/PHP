@@ -65,7 +65,56 @@ HTML中标签的id唯一，不能重复
     <b class="cls2">ccccccccc</b>
   </body>
   
+#伪元素样式选择器
+是指同一个HTML元素在不同状态下的定义方式，目前只有a、p可以使用它
+如：
+  <style>
+    /*没有任何动作时的状态*/
+    a.one.link {
+      color:green;
+      front-size:1cm;
+    }
+    /*鼠标移动上去的状态*/
+    a.one.hover {
+      color:red;
+      front-size:2cm;
+    }
+    /*选中时的状态*/
+    a.one.active {
+      color:blue;
+      front-size:2cm;
+    }
+    /*访问之后的状态*/
+    a.one.visited {
+      color:yellow;
+      front-size:1cm;
+    }
+    
+    a.two.link {
+      color:red;
+      front-size:1cm;
+    }
+    a.two.visited {
+      color:yellow;
+      front-size:3cm;
+    }
+    /*段落首字母样式*/
+    p:first-letter {
+      color:red;
+      front-size:2cm;
+    }
+    /*段落首行样式*/
+    p:first-line {
+      color:green;
+      background-color:yellow;
+    }
+  </style>
   
-  
-  
+  <body>
+    <a class="one" href="http://www.111.com">111111111</a>
+    <a class-"two" href="http://www.222.com">222222222</a>
+    
+    <p>aaaaaaaaaa</p>
+    <p>bbbbbbbbbb</p>
+  </body>
   
