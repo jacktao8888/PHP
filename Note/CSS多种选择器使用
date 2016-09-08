@@ -37,3 +37,22 @@
   </body>
 
 #组合样式选择器
+用英文逗号分开，减少样式表的声明
+如：
+  <style>
+    div,#id2,.cls2,h1,p,a {
+      color:red;
+      font-size:2cm;
+    }
+  </style>
+  
+  <body>
+    <div>aaaaaaa</div>
+    <h1>bbbbbbb</h1>
+    <b class="cls2">ccccccccc</b>
+  </body>
+  
+  
+  
+  
+  
