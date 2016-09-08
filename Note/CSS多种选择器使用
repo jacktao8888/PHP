@@ -19,11 +19,14 @@
 #关联样式选择器
 必须按关联关系使用，不能有反顺序
 如：
+  <style>
   div #id1 .cls2 p {
     color:red;
     background-color:#ff00ff;
   }
+  </style>
   
+  <body>
   <div>
     <div id="id1">
       <div class="cls2">
@@ -31,6 +34,6 @@
       </div>
     </div>
   </div>
-  
+  </body>
 
 #组合样式选择器
