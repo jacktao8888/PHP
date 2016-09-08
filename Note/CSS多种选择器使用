@@ -5,7 +5,7 @@
 
 
 #HTML样式选择器
-任何HTML标签都可以带style属性
+任何HTML标签都可以直接在<style>中设置样式
 
 #类选择器
 标签添加class属性，定义class的样式
