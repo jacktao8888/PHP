@@ -1,3 +1,4 @@
+/*下面的两个import导入语句必须写到最前面，要不然其他浏览器打开后，不能导入one.css和two.css中的样式*/
 @import url(one.css);
 @import url(two.css);
 
