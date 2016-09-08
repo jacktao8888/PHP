@@ -1,4 +1,6 @@
-/*下面的两个import导入语句必须写到最前面，要不然其他浏览器打开后，不能导入one.css和two.css中的样式*/
+/*下面的两个import导入语句必须写到最前面，要不然其他浏览器打开后，不能导入one.css和two.css中的样式，
+ 但是，IE浏览器是可以的，因为IE对html、css的支持都是不严格的。要想执行跨浏览器的网页，必须严格遵循W3C定义
+*/
 @import url(one.css);
 @import url(two.css);
 
