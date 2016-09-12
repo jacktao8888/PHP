@@ -4,3 +4,9 @@
 4、FF如果使用浮动则是正常的；
 5、IE和FF在列表不区别
 6、IE的border是内容+边框，FF的border不包括边框
+  解决方法：  width:298px !important; /*专门为火狐浏览器设置，有这个"!important"属性，直接执行这个width*/
+              width:300px;            /*css中有两个width时，IE以后面的为准*/
+
+
+
+
