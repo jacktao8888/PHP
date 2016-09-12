@@ -1,4 +1,6 @@
 1、IE和FF(FireFox)居中不一样，需要用text-align具体指定，消除差异；
 2、IE指定的最小高度为18px，如果高度小于18px，只能按照18px显示，使用overflow:hidden可以消除这种限制；
 3、IE会自动调整高度，而FF不会，所以可以去掉外层样式设置的width和height，内层样式会自动撑开；
-4、
+4、FF如果使用浮动则是正常的；
+5、IE和FF在列表不区别
+6、IE的border是内容+边框，FF的border不包括边框
