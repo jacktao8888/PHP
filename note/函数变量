@@ -23,6 +23,8 @@
    include_once   //包含多次，只执行一次，每次都得判断是否包含过，所以执行效率较低
    include("文件名")；
    include "文件名"；
+   
+   动态包含：include "model/".$className.".php";
           
 
 
