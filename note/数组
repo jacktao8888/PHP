@@ -1,3 +1,4 @@
+##直接声明：
 索引数组：下标以整数作为索引的数组
           $arr[]="1";       //下标默认为0
           $arr[0]="one";    //$arr[0]由原来的"1"变为"one"
@@ -9,3 +10,19 @@
           $arr["id"]="1";
           $arr["name"]="Linda";
           $arr["age"]="age";
+
+##使用array函数
+          $usr=array(1,"Tom","male");
+          $usr=array(0=>1,"name"=>"Jerry",50=>"man");       //键=>值对，键可以为整数或字符串，值可以为任意
+          
+          $usr=array(
+                    array(1,"zhangsan",20),
+                    array(2,"lisi",25),
+                    array(3,"wangwu",30)
+          );
+
+
+
+
+
+
