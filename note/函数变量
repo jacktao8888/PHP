@@ -19,8 +19,8 @@
 9、重用函数：使用自定义的函数库
    require();
    require "";
-   require_once   //包含多次，只执行一次
-   include_once   //包含多次，只执行一次
+   require_once   //包含多次，只执行一次，每次都得判断是否包含过，所以执行效率较低
+   include_once   //包含多次，只执行一次，每次都得判断是否包含过，所以执行效率较低
    include("文件名")；
    include "文件名"；
           
