@@ -17,13 +17,16 @@
 7、带有...的参数函数，表示可以传任意多个参数，即实参可以比形参多。
 8、回调函数：调用这个函数时，需要传进一个函数进来，和Python中的map、reduce、filter函数类似
 9、重用函数：使用自定义的函数库
-   require();
+   require();     //静态包含，固定包含某个文件
    require "";
    require_once   //包含多次，只执行一次，每次都得判断是否包含过，所以执行效率较低
    include_once   //包含多次，只执行一次，每次都得判断是否包含过，所以执行效率较低
-   include("文件名")；
+   include("文件名")；  //动态包含
    include "文件名"；
    
+   静态包含：require "header.inc.php";
+               /**/
+             require "footer.inc.php";
    动态包含：include "model/".$className.".php";
           
 
