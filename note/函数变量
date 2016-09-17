@@ -19,8 +19,8 @@
 9、重用函数：使用自定义的函数库
    require();
    require "";
-   require_once
-   include_once
+   require_once   //包含多次，只执行一次
+   include_once   //包含多次，只执行一次
    include("文件名")；
    include "文件名"；
           
