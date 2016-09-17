@@ -16,7 +16,13 @@
    必须传值的参数必须放在左边，因为函数传参是从左到右的；
 7、带有...的参数函数，表示可以传任意多个参数，即实参可以比形参多。
 8、回调函数：调用这个函数时，需要传进一个函数进来，和Python中的map、reduce、filter函数类似
-
-       
+9、重用函数：使用自定义的函数库
+   require();
+   require "";
+   require_once
+   include_once
+   include("文件名")；
+   include "文件名"；
+          
 
 
