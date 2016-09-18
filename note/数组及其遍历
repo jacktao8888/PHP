@@ -1,0 +1,61 @@
+##直接声明：
+索引数组：下标以整数作为索引的数组
+          $arr[]="1";       //下标默认为0
+          $arr[0]="one";    //$arr[0]由原来的"1"变为"one"
+          $arr[3]="jack";
+          $arr[]="20";
+          $arr[9]="man";
+          $arr[]="aaa@bbb.com";   //下标为10
+关联数组：下标以字符串作为索引的数组
+          $arr["id"]="1";
+          $arr["name"]="Linda";
+          $arr["age"]="age";
+
+##使用array函数
+          $usr=array(1,"Tom","male");
+          $usr=array(0=>1,"name"=>"Jerry",50=>"man");       //键=>值对，键可以为整数或字符串，值可以为任意
+          
+          $usr=array(
+                    array(1,"zhangsan",20),
+                    array(2,"lisi",25),
+                    array(3,"wangwu",30)
+          );
+          
+          
+数组遍历方式：
+##for循环遍历：只适合遍历连续的索引数组（也就是不能遍历关联数组，或下表不连续的索引数组）
+               这不是PHP中的首选方式
+##foreach()循环遍历：
+          foreach(数组变量 as 变量值){
+          
+          }
+          
+      例：$user=array("id"=>1,"name"=>"Peter","age"=>29);
+          foreach($user as $val){
+                    echo $val.'<br>';
+          }
+          foreach($user as $key=>$val){
+                    echo $key.'===>'.$val.'<br>';
+          }
+##each()、list()和while()组合循环遍历数组
+###each()和while()
+       例：
+          $user=array("id"=>1,"name"=>"Peter","age"=>29);
+          $a=each($user);
+          print_r($a);
+          $b=each($user);
+          print_r($b);
+           
+          while($arr=each($user)){
+                    //echo $arr[0].'===>'.$arr[1].'<br>';
+                    echo $arr['key'].'===>'.$arr['value'.'<br>'];
+          }
+###list()函数和while():
+       list只能接收索引数组，
+       例：
+          $user=array("id"=>1,"name"=>"Peter","age"=>29);
+          list($id)
+
+
+
+
