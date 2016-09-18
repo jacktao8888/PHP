@@ -13,7 +13,15 @@
   array_intersect($a1,$a2); //找出两个数组之间相同的部分，交集
   array_diff($a1,$a2);     //找出$a2比$a1多出的部分
   
+##使用堆栈
+  array_push()
+  array_pop()
   
+##使用队列
+  array_unshift()
+  array_shift()
+  
+  unset($a1[5]);
   
   
   
