@@ -53,6 +53,9 @@
 ###list()函数和each()、while():
        list只能接收索引数组，
        例：
+          $user=array(1,"Tom",19);
+          list($id,$name,$age)=$user;   //$id=1,$name="Tom",$age=19
+       例：
           $user=array("id"=>1,"name"=>"Peter","age"=>29);
           list($key,$val)=each($user);  //$key:[0]->"id"  $val:[1]->1
           
