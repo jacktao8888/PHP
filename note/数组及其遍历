@@ -41,7 +41,7 @@
 ###each()和while()
        例：
           $user=array("id"=>1,"name"=>"Peter","age"=>29);
-          $a=each($user);
+          $a=each($user);               //每次只取一组键值对
           print_r($a);
           $b=each($user);
           print_r($b);
@@ -59,7 +59,13 @@
           while(list($key,$val)=each($user)){
           
           }
-
-
+       使用数组的内部指针访问数组
+          prev(数组);         //指针指向上一个键值对
+          next(数组);         //指针指向下一个键值对
+          reset(数组);        //指针指向数组开头的键值对
+          end(数组);          //指针指向数组最后的键值对
+          
+          current(数组);      //取数组当前指针下的值
+          key(数组);          //取数组当前指针下的键
 
 
