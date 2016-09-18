@@ -1,0 +1,19 @@
+##数组键/值处理函数
+  $arr=array("id"=>1,"name"=>"Jack",10=>"age");
+  array_values();       //取出所有的值
+  array_keys();         //取出所有的键
+  in_array();           //判断值是否在数组中
+  array_key_exists();   //判断键是否在数组中
+  
+##数组处理函数
+  array_slice($a1,4,2);         //取$a1[4]、$a[5]两个值
+  array_splice();              //
+  array_combine($a1,$a2);     //$a1作为键名，$a2作为值，组成新的数组
+  array_merge($a1,$a2);      //合并两个数组，重复的键名的值覆盖
+  array_intersect($a1,$a2); //找出两个数组之间相同的部分，交集
+  array_diff($a1,$a2);     //找出$a2比$a1多出的部分
+  
+  
+  
+  
+  
