@@ -50,11 +50,15 @@
                     //echo $arr[0].'===>'.$arr[1].'<br>';
                     echo $arr['key'].'===>'.$arr['value'.'<br>'];
           }
-###list()函数和while():
+###list()函数和each()、while():
        list只能接收索引数组，
        例：
           $user=array("id"=>1,"name"=>"Peter","age"=>29);
-          list($id)
+          list($key,$val)=each($user);  //$key:[0]->"id"  $val:[1]->1
+          
+          while(list($key,$val)=each($user)){
+          
+          }
 
 
 
