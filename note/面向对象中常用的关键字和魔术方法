@@ -55,6 +55,36 @@
           3、只要一个对象一诞生，就要有初始化的动作，和构造方法__construct()作用类似
           4、__clone()方法中的$this关键字，代表的是副本对象
 
+  __autoload():
+          注意：
+              1、其他的魔术方法都是在类中添加起作用，这是唯一一个不在类中添加的方法。
+              2、只要在页面中使用一个类，只要用到类名就会自动将类名传给这个函数
+            如：
+              function __autoload($className){
+                include "./".$className.".class.php";   //include动态包含类
+              }
+              
+              $one=new One;   //会自动载入One类
+              Two::func();    //会自动载入Two类
+  
+  对象串行化（序列化）：将一个对象转化成二进制串：
+          1、将对象长时间存储在数据库或文件中时
+          2、将对象在多个PHP文件中传输时
+          
+          serialize()     参数是一个对象，返回的就是串行化的二进制串
+          unserialize()   参数是对象的二进制串，返回来的是新生成的对象
+          
+          如：
+            $p=new Person("zhangsan",20,"nan");
+            $str=serialize($p);
+            file_put_contents("test.txt",$str);
+  __sleep():
+          
+
+
+
+
+
 
 
 
