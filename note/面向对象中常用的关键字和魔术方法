@@ -42,7 +42,9 @@
   
   __toString():
           作用：快速读取对象的成员的字符串表示方法
-
+          调用：直接输出对象引用时自动调用，
+                比如:$p1=new Person;
+                     echo $p1;      //输出function __toString(){}中的内容
 
 
 
