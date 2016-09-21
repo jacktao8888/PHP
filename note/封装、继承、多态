@@ -47,7 +47,32 @@
       }
             
 ##多态
-  抽象的方法：
-  抽象的类：
+  抽象的方法：没有方法体的方法，即没有"{}"内容的方法，需要用"abstract"修饰，如：
+              abstract function fun();
+  抽象的类：包含抽象的方法的类就是抽象的类，
+              abstract class Bird {
+                  abstract function fun1();
+                  abstract function fun2() {
+                  
+                  }
+              }
+  接口：
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
  
