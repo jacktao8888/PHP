@@ -49,6 +49,7 @@
 ##多态
   抽象的方法：没有方法体的方法，即没有"{}"内容的方法，需要用"abstract"修饰，如：
               abstract function fun();
+              function fun2() {}          //这不是抽象方法
   抽象的类：一种特殊的类，包含抽象的方法的类就是抽象的类，如：
               abstract class Bird {
                   abstract function fun1();
@@ -61,7 +62,7 @@
                   function mount(); //默认为abstract抽象方法
               }
   
-  一个类可以在继承一个父类的同时，去实现一个或多个接口（先继承，再实现），如：
+  一个类可以在继承唯一一个父类的同时，去实现一个或多个接口（先继承，再实现），如：
       class Upan extends equipMent implements USB {
   
       }
