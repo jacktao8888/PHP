@@ -8,7 +8,7 @@
   在函数中可以直接使用这些数组
   
   $_GET             //经由URL请求提交至脚本的变量，GET请求方式
-  $_POST            //经由POST方法提交值脚本的变量
+  $_POST            //经由POST方法提交至脚本的变量
   $_REQUEST         //经由GET/POST/COOKIE机制提交到脚本的变量，该数组不可靠，尽量不要使用
   $_FILES           //经由HTTP POST文件上传而提交至脚本的变量
   $_COOKIE          //会话控制，跟踪用户变量
