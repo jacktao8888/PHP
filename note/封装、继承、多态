@@ -70,7 +70,7 @@
   接口 vs 抽象的类 比较：
       作用相同：        都不能创建对象，都需要子类去实现，如果想要子类创建对象，就必须实现父类中的全部抽象方法
       定义方式：        interface USB {}              |     abstract class Bird {}
-      访问权限控制：    必须全部为public              |     访问权限至少为protected，继承的子类的权限也是至少为protected
+      访问权限控制：    必须全部为public              |     访问权限至少为protected，可以是protected、public（其子类也是）
       类中方法：        必须全部为抽象的方法          |     可以有非抽象的方法
                         不用使用abstract修饰          |
       成员属性：        只能声明常量，不能声明变量    |     可以声明变量
