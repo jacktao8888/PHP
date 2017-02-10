@@ -9,7 +9,7 @@ class CountClothes extends BaseCtrl {
         $refId = array (1134,8107,9505,9361);
         $refId = implode(',', $refId);
         $dao = new UserDao();
-        $sql = 'select players.id from User users left join Player players on users.id = players.userId where users.lastLoginTime > ?';
+        $sql = 'select players.id from User users left join Player players on users.id = players.userId where users.lastLoginTime > ? and players.serverId = 1';
         $data = $dao->tbl()->sql($sql, '2016-12-01 00:00:00')->fetchAll();
         //$data = $dao->findAll(array('lastLoginTime > ? left join Player on User.id = Player.userId', '2016-12-01 00:00:00'));
         //debug($data);
