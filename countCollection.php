@@ -1,5 +1,6 @@
 <?php
 class CountClothes extends BaseCtrl {
+    //summer-admin-system
     public function __construct()
     {
         parent::__construct('CountClothes');
