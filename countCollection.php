@@ -32,7 +32,7 @@ class CountClothes extends BaseCtrl {
         $counts = count($players);
         $times = floor($counts/1000);
         $dao = new PlayerClothesDao();
-        //$players[]里面的数据有几十万条，分批次处理，较小数据库压力！
+        //$players[]里面的数据有几十万条，分批次处理，减小数据库查询压力！
         for($i = 0;$i <= $times;$i++) {
             $temp = array();
             for($j = ($i * 1000);$j < ($i * 1000 + 1000);$j++) {
