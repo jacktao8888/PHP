@@ -22,9 +22,9 @@ class ExportData2Sql {
         
         self::$mysql = mysqli_connect($hostname, $dbUsername, $dbPassword);
         mysqli_select_db(self::$mysql, $dbName);
-        
-        $this->dir = $dirName;
+        mysqli_autocommit(self::$mysql,FALSE);
 
+        $this->dir = $dirName;
         if (!is_dir($dirName)) 
         {
             // echo $this->dir;
@@ -85,24 +85,24 @@ class ExportData2Sql {
                 $now = time();
                 foreach ($matchedProducts as $key => $matchedInfo) {
                     if ($key == 'status') continue;
-                    //所有的字段以字符串形式存储
-                    $insertInfo = implode("','",$matchedInfo);
-                    $insertInfo = $productId ."','". $insertInfo ."','". $now ."','". $now;
-                    $insertInfo = "('" . $insertInfo . "'),";
-//                    $insertInfo .= "(" . intval($productId)
-//                        .",". intval($matchedInfo['matching_degree'])
-//                        .",". $matchedInfo['product_price']
-//                        .",'". $matchedInfo['product_link']
-//                        ."','". $matchedInfo['product_title']
-//                        ."','". $matchedInfo['product_image']
-//                        ."','". $matchedInfo['manufacturer']
-//                        ."','". $matchedInfo['manufacturer_link']
-//                        ."','". $matchedInfo['manufacturer_location']
-//                        ."',". $matchedInfo['purchase_number']
-//                        .",". $matchedInfo['confidence_degree']
-//                        .",". $now
-//                        .",". $now
-//                        ."),";
+                    //所有的字段以字符串形式存储。不可靠，sql字段顺序要保证一致！
+//                    $insertInfo = implode("','",$matchedInfo);
+//                    $insertInfo = $productId ."','". $insertInfo ."','". $now ."','". $now;
+//                    $insertInfo = "('" . $insertInfo . "'),";
+                    $insertInfo .= "(" . intval($productId)
+                        .",". intval($matchedInfo['matching_degree'])
+                        .",". $matchedInfo['product_price']
+                        .",'". $matchedInfo['product_link']
+                        ."','". $matchedInfo['product_title']
+                        ."','". $matchedInfo['product_image']
+                        ."','". $matchedInfo['manufacturer']
+                        ."','". $matchedInfo['manufacturer_link']
+                        ."','". $matchedInfo['manufacturer_location']
+                        ."',". $matchedInfo['purchase_number']
+                        .",". $matchedInfo['confidence_degree']
+                        .",". $now
+                        .",". $now
+                        ."),";
                 }
                 $insertInfo = rtrim($insertInfo, ',');
 
@@ -110,7 +110,6 @@ class ExportData2Sql {
 //                var_dump($sql);
 
                 self::saveAndUpdate($sql, $file, $cfId, intval($matchedProducts['status']));
-                fwrite(self::$processLog, 'file:' .$file. ',cf_id:'.$cfId."\n");
             }
         }
 
@@ -120,20 +119,22 @@ class ExportData2Sql {
     }
 
     static function saveAndUpdate($query, $file, $id = 0, $status = 0) {
-//        var_dump($query);
         mysqli_begin_transaction(self::$mysql);
         $insertResult = mysqli_query(self::$mysql, $query);
-        mysqli_error(self::$mysql);
-//        mysqli_free_result($result);
+
+        //oc_product表未MyISAM表，不支持事务
+        $updateResult = true;
         if (!empty($status)) {
             $updateResult = mysqli_query(self::$mysql, 'update oc_product set matching_status = '. $status .' where cf_id = '.$id);
         }
-        mysqli_commit(self::$mysql);
 
         //出错回滚事务
         if (empty($insertResult) || empty($updateResult)) {
-            mysqli_rollback(self::$mysql);
+            var_dump(mysqli_rollback(self::$mysql));
             fwrite(self::$insertLog, mysqli_error(self::$mysql).'file:' .$file. ',cf_id:'.$id."\n");
+        } else {
+            mysqli_commit(self::$mysql);
+            fwrite(self::$processLog, 'file:' .$file. ',cf_id:'.$id."\n");
         }
     }
 
