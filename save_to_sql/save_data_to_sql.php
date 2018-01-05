@@ -54,11 +54,24 @@ class ExportData2Sql {
         self::$updateLog = fopen($logDir.'/update_error.log', 'a+');//error: update oc_product表的matching_status出错
         self::$unmatchedLog = fopen($logDir.'/unmatched_error.log', 'a+');//not matched products
         self::$processLog = fopen($logDir.'/process.log', 'a+');
-        //每个文件固定1000条json记录，因为不断有新文件生成（按序号递增），扫描目录中的文件，按从大到小排序，序号最大的文件先不处理
-        rsort($files);
-        unset($files[0]);
 
-        sort($files);//从小到大处理
+        //处理掉文件名序号最大的文件，该文件为还在生成的文件
+        //files 列表为['1688_data_1.json','1688_data_2.json']
+        //冒泡排序
+        $count = count($files);
+        for ($i = 0; $i < $count; $i++) {
+            for ($j = 0; $j < $count - $i - 1; $j++) {
+                if (strnatcasecmp($files[$j], $files[$j+1]) > 0) {
+                    $tmp = $files[$j];
+                    $files[$j] = $files[$j+1];
+                    $files[$j+1] = $tmp;
+                }
+            }
+        }
+        unset($files[$count - 1]);
+        print_r($files);
+
+        // sort($files);//从小到大处理
         //files 列表为['1688_data_1.json','1688_data_2.json']
         foreach ($files as $file) {
             $filePath = $this->dir . '/' . $file;
