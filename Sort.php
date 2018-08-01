@@ -3,6 +3,7 @@ ini_set('memory_limit', '2048M');
 
 $original_arr = array(23,53,32,3,6,56,66,90,1,123,234,632);
 
+//桶排序
 function bucketsSort($arr) {
     $num = count($arr);
 //var_dump($arr);
@@ -48,6 +49,7 @@ function divideArr($arr, $divide) {
     return $count;
 }
 
+//基数排序
 function baseSort ($arr) {
     for ($i = 0; $i <=2; $i++) {
         $divide = pow(10, $i);
