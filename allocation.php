@@ -173,7 +173,7 @@ class ControllerAllocation {
         }
     }
 
-    public function operateHistory($in) {
+    public function operate($in) {
         $in = json_decode($in, true);
         $orderList = $in['order_list'];
         $operatorList = $in['operator_list'];
@@ -250,8 +250,6 @@ $obj = new ControllerAllocation();
 
 if (empty($input['order_list']) || empty($input['operator_list'])) {
     exit('error order_list or operator_list');
-} else if (!empty($input['order_list']) && !empty($input['order_list'][0]['overdue_days'])) {
-    $obj->operateHistory(json_encode($input));
 } else {
-    $obj->operateNew(json_encode($input));
+    $obj->operate(json_encode($input));
 }
