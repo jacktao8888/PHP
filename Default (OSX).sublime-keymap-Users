@@ -1,0 +1,36 @@
+[
+	// {
+ //        "keys": ["super+o"], "command": "omni_markup_preview",
+ //        "context": [{"key": "omnimarkup_is_enabled", "operator": "equal", "operand": ""}]
+ //    },
+    { "keys": ["super+["], "command": "jump_back" },
+    { "keys": ["super+]"], "command": "jump_forward" },
+
+    { "keys": ["super+o"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+    { "keys": ["super+shift+o"], "command": "goto_symbol_in_project" },
+    { "keys": ["shift+super+r"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+    { "keys": ["shift+super+g"], "command": "goto_reference" },
+
+    { "keys": ["super+shift+t"], "command": "goto_definition" },
+
+    { "keys": ["super+shift+w"], "command": "reopen_last_file" },
+
+    { "keys": ["super+alt+t"],"command": "open_terminal","args": {"parameters": ["-T", "Custom Window Title"]}},
+
+    // { "keys": ["super+j"], "command": "code_intel_auto_complete" },
+    // { "keys": ["ctrl+d"], "command": "goto_python_definition" },
+    // { "keys": ["ctrl+d"], "command": "goto_php_definition" }
+    
+    { "keys": ["alt+up"], "command": "swap_line_up" },
+    { "keys": ["alt+down"], "command": "swap_line_down" },
+
+    { "keys": ["super+j"], "command": "find_under" },
+    { "keys": ["shift+super+j"], "command": "find_under_prev" },
+    { "keys": ["ctrl+super+j"], "command": "find_all_under" },
+    { "keys": ["super+k"], "command": "find_next" },
+    { "keys": ["super+shift+k"], "command": "find_prev" },
+
+    { "keys": ["super+shift+d"], "command": "duplicate_line" },
+    { "keys": ["super+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+]
