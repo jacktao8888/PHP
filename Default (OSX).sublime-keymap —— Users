@@ -14,7 +14,7 @@
 
     { "keys": ["super+shift+t"], "command": "goto_definition" },
 
-    { "keys": ["super+shift+w"], "command": "reopen_last_file" },
+    { "keys": ["super+r"], "command": "reopen_last_file" },
 
     { "keys": ["super+alt+t"],"command": "open_terminal","args": {"parameters": ["-T", "Custom Window Title"]}},
 
